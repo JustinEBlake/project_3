@@ -19,22 +19,30 @@ CREATE TABLE "stocks" (
     "low" Numeric   NOT NULL,
     "close" Numeric   NOT NULL,
     "adj_Close" Numeric   NOT NULL,
-    "volume" Integer   NOT NULL
+    "volume" Numeric   NOT NULL
 );
 
 CREATE TABLE "balance_sheet" (
+    "Id" Integer   NOT NULL,
     "company_symbol" Varchar(255)   NOT NULL,
     "date" Date   NOT NULL,
-    "total_debt" Integer   NOT NULL,
-    "shares_issued" Integer   NOT NULL
+    "total_debt" Numeric   NOT NULL,
+    "shares_issued" Numeric   NOT NULL,
+    CONSTRAINT "pk_balance_sheet" PRIMARY KEY (
+        "Id"
+     )
 );
 
 CREATE TABLE "financial_statement" (
+    "Id" Integer   NOT NULL,
     "company_symbol" Varchar(255)   NOT NULL,
     "date" Date   NOT NULL,
-    "total_revenue" Integer   NOT NULL,
-    "gross_profit" Integer   NOT NULL,
-    "total_expenses" Integer   NOT NULL
+    "total_revenue" Numeric   NOT NULL,
+    "gross_profit" Numeric   NOT NULL,
+    "total_expenses" Numeric   NOT NULL,
+    CONSTRAINT "pk_financial_statement" PRIMARY KEY (
+        "Id"
+     )
 );
 
 ALTER TABLE "stocks" ADD CONSTRAINT "fk_stocks_company_symbol" FOREIGN KEY("company_symbol")
