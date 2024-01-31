@@ -2,9 +2,10 @@ import pandas as pd
 import sqlite3
 
 def extract():
-    user_input = input("Enter csv to filter (e.g. 'apple_balance', 'company_list', 'home_depot_balance', 'mcdonalds_balance', 'tesla_balance')")
-    # use apis or anything else here as needed
-    if user_input == 'apple_balance':
+    #obtaining user input
+    user_input = input("Enter csv to filter (e.g. 'aapl', 'company_list', 'home_depot_balance', 'mcdonalds_balance', 'tesla_balance')")
+    #parsing through user inputap
+    if user_input == 'aapl':
         return pd.read_csv('Resources/aapl_bal.csv')
     
     elif user_input == 'company_list':
@@ -23,9 +24,10 @@ def extract():
         return print('Invalid input.')
 
 def transform(data):
-    # perform data transformations and return tables
-    share_issued = data[['Share Issued', 'Date']].groupby(['Share Issued', 'Date']).size().reset_index(drop=False).reset_index(drop=False, names='id')
-    total_debt = data[['Total Debt', 'Date']].groupby(['Total Debt', 'Date']).size().reset_index(drop=False).reset_index(drop=False, names='id')
+    #transform the data
+    share_issued = data[['company_name', 'Date', 'Share Issued']].groupby(['company_name', 'Date', 'Share Issued']).size().reset_index(drop=False).reset_index(drop=False, names='id')
+    total_debt = data[['company_name', 'Date', 'Total Debt']].groupby(['company_name', 'Date', 'Total Debt']).size().reset_index(drop=False).reset_index(drop=False, names='id')
+
 
     return share_issued, total_debt
 
