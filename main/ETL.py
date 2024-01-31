@@ -3,22 +3,22 @@ import sqlite3
 
 def extract():
     #obtaining user input
-    user_input = input("Enter csv to filter (e.g. 'aapl', 'company_list', 'home_depot_balance', 'mcdonalds_balance', 'tesla_balance')")
+    user_input = input("Enter csv to filter (e.g. 'companies', 'AAPL_balance', 'HD_balance', 'MCD_balance', 'TSLA_balance')")
     #parsing through user inputap
-    if user_input == 'aapl':
+    if user_input == 'AAPL_balance':
         return pd.read_csv('Resources/aapl_bal.csv')
     
-    elif user_input == 'company_list':
-        return pd.read_csv('Resources/company.csv')
-    
-    elif user_input == 'home_depot_balance':
+    elif user_input == 'HD_balance':
         return pd.read_csv('Resources/hd_bal.csv')
     
-    elif user_input == 'mcdonalds_balance':
+    elif user_input == 'MCD_balance':
         return pd.read_csv('Resources/mcd_bal.csv')
     
-    elif user_input == 'tesla_balance':
+    elif user_input == 'TSLA_balance':
         return pd.read_csv('Resources/tsla_bal.csv')
+    
+    elif user_input == 'companies':
+        return pd.read_csv('Resources/company.csv')
     
     else:
         return print('Invalid input.')
