@@ -35,5 +35,5 @@
 - Given that all the data is public information, we felt confident that we were not in violation of any ethical laws. 
 
 ## ERD
-![ERD](misc/erd.png)
+![ERD](Final/misc/erd.png)
 
