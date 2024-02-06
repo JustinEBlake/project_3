@@ -37,3 +37,5 @@
 ## ERD
 ![alt text](QuickDBD-Finance_db_schema.png)
 
+## Google Documentation
+- [Project Overview](https://docs.google.com/document/d/1OXjy7YAV7GxSXz4JWjIBlLQs--2IRi2A2Apl-znAHZY/edit)
