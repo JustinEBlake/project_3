@@ -35,6 +35,5 @@
 - Given that all the data is public information, we felt confident that we were not in violation of any ethical laws. 
 
 ## ERD
-![ERD]
 ![alt text](QuickDBD-Finance_db_schema.png)
 
